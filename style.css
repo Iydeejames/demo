@@ -946,4 +946,10 @@ html{
       width: 60rem;
     }
   }
+
+  @media (max-width: 450px) {
+    html {
+      font-size: 25%;
+    }
+  }
   /* End of Responsive */
