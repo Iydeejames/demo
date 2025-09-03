@@ -193,10 +193,13 @@ html {
 
 .section-1 {
   width: 100%;
-  min-height: 100dvh;
+  height: 100vh; /* use vh, not dvh, to avoid expansion on scroll */
   background: url(images/bg_banner1.jpg) no-repeat center center / cover;
   position: relative;
+  background-attachment: fixed; /* prevent "stretch" */
+  background-size: cover;
 }
+
 
 @supports not (height: 100dvh) {
   .section-1 { min-height: calc(var(--vh) * 100); }
@@ -349,6 +352,14 @@ html {
     max-width: 90%;
   }
 
+  .section-1 {
+    height: 100vh;              /* fixed viewport height */
+    background-attachment: scroll; /* prevent buggy zoom effect */
+    background-position: center top;
+    background-size: cover;
+    overflow: hidden; /* stop weird expansion */
+  }
+
   .intro-text {
     font-size: 2.4rem;
     margin-top: 6rem;
@@ -386,11 +397,10 @@ html {
 ----------------------------- */
 .section-2 {
   width: 100%;
-  min-height: auto; /* let section fit content naturally */
   background-color: #ffffff;
   display: flex;
-  flex-direction: column;  
-  justify-content: center;  /* vertical centering */
+  flex-direction: column;
+  justify-content: center;  
   align-items: center;
   text-align: center;
   padding: 6rem 2rem;
@@ -399,7 +409,7 @@ html {
 
 .section-2 .section-heading {
   font-size: 3rem;
-  color: #000 !important; /* force black, override global */
+  color: #000 !important;
   margin-bottom: 1rem;
 }
 
@@ -417,26 +427,53 @@ html {
   border-top: 2px solid #ccc;
   border-bottom: 2px solid #ccc;
   padding: 2rem;
-  margin: 0 auto;
-  max-width: 800px;
-}
-
-.section-2 .fa-quote-left,
-.section-2 .fa-quote-right {
-  font-size: 2.5rem;
-  color: #000;
+  margin: 0 auto;            /* keep it centered */
+  width: 100%;               /* full width inside container */
+  max-width: 800px;          /* but never wider than 800px */
+  box-sizing: border-box;
 }
 
 /* =====================
-   Mobile-specific styles
+   Tablet (769px–1024px)
+===================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .section-2 {
+    padding: 4rem 2rem;
+  }
+  .section-2-paragraph {
+    max-width: 90%;   /* scale nicely and stay centered */
+    width: 90%;
+  }
+}
+
+/* =====================
+   Laptop (1025px–1280px)
+===================== */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .section-2-paragraph {
+    max-width: 80%;
+    width: 80%;
+    margin: 0 auto;   /* force center */
+  }
+}
+
+/* =====================
+   Mobile (≤768px)
 ===================== */
 @media (max-width: 768px) {
+  .section-2 {
+    padding: 3rem 1.5rem;
+    min-height: auto;
+  }
+
   .section-2 .section-heading {
-    font-size: 4rem;
+    font-size: 2.5rem;
   }
 
   .section-2-paragraph {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
+    width: 95%;       /* almost full width */
+    max-width: 95%;
   }
 
   .section-2 .fa-quote-left,
@@ -444,6 +481,7 @@ html {
     font-size: 2rem;
   }
 }
+
 
   
 /* -----------------------------
