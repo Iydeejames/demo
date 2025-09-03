@@ -381,77 +381,70 @@ html {
 }
 
 
-
 /* -----------------------------
-   4) Section 2 
-   ----------------------------- */
-   .section-2 {
-    width: 100%;
-    min-height: 100dvh;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 4rem 2rem;
-    margin-bottom: -12rem;
-  }
-  
-  @supports not (height: 100dvh) {
-    .section-2 { min-height: calc(var(--vh) * 100); }
-  }
-  
-  .content-wrapper {
-    max-width: 800px;
-  }
-  
-  .section-heading {
-    font-size: 3rem;
-    color: #000;
-  }
-  
-  .section-heading-line {
-    width: 80px;
-    height: 4px;
-    background-color: #000;
-    margin: 0 auto 2rem auto;
-  }
-  
-  .section-2-paragraph {
-    font-size: 1.6rem;
-    color: #000;
-    line-height: 1.6;
-    border-top: 2px solid #ccc;
-    border-bottom: 2px solid #ccc;
-    padding: 2rem;
-    position: relative;
-  }
-  
-  .fa-quote-left,
-  .fa-quote-right {
-    font-size: 2.5rem;
-    color: #000;
-  }
+   4) Section 2 – About Me
+----------------------------- */
+.section-2 {
+  width: 100%;
+  min-height: auto; /* let section fit content naturally */
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;  
+  justify-content: center;  /* vertical centering */
+  align-items: center;
+  text-align: center;
+  padding: 6rem 2rem;
+  box-sizing: border-box;
+}
 
-  /* =====================
+.section-2 .section-heading {
+  font-size: 3rem;
+  color: #000 !important; /* force black, override global */
+  margin-bottom: 1rem;
+}
+
+.section-2 .section-heading-line {
+  width: 80px;
+  height: 4px;
+  background-color: #000;
+  margin: 0 auto 2rem auto;
+}
+
+.section-2-paragraph {
+  font-size: 1.6rem;
+  color: #000;
+  line-height: 1.6;
+  border-top: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.section-2 .fa-quote-left,
+.section-2 .fa-quote-right {
+  font-size: 2.5rem;
+  color: #000;
+}
+
+/* =====================
    Mobile-specific styles
 ===================== */
 @media (max-width: 768px) {
-  .section-heading {
-    font-size: 5rem;
-    color: #000;
-
+  .section-2 .section-heading {
+    font-size: 4rem;
   }
 
   .section-2-paragraph {
     font-size: 1.9rem;
   }
-  .fa-quote-left,
-  .fa-quote-right {
+
+  .section-2 .fa-quote-left,
+  .section-2 .fa-quote-right {
     font-size: 2rem;
-    color: #000;
   }
 }
+
   
 /* -----------------------------
    5) Section 3 – Blog / Swiper
@@ -519,10 +512,10 @@ html {
   padding-left: 2rem;
 }
 
-.heading-free     { background: linear-gradient(to right, #087285, #0da5d3); border-radius: 1.8rem 1.8rem 0 0; }
-.heading-basic    { background: linear-gradient(to right, #946809, #bdba0e); border-radius: 1.8rem 1.8rem 0 0; }
-.heading-standard { background: linear-gradient(to right, #a10c14, #e23b3b); border-radius: 1.8rem 1.8rem 0 0; }
-.heading-premium  { background: linear-gradient(to right, #0b7a48, #3be286); border-radius: 1.8rem 1.8rem 0 0; }
+.heading-free     { background: linear-gradient(to right, #0da5d3, #0da5d3); border-radius: 1.8rem 1.8rem 0 0; }
+.heading-basic    { background: linear-gradient(to right, #c6a169, #c6a169); border-radius: 1.8rem 1.8rem 0 0; }
+.heading-standard { background: linear-gradient(to right, #e23b3b, #e23b3b); border-radius: 1.8rem 1.8rem 0 0; }
+.heading-premium  { background: linear-gradient(to right, #3be286, #3be286); border-radius: 1.8rem 1.8rem 0 0; }
 
 .pricing-card-price {
   font-family: Arial, Helvetica, sans-serif;
@@ -534,8 +527,8 @@ html {
 
 .pricing-card-list li { margin-bottom: 0.5rem; }
 
-.list-free li     { color: var(--accent-1); }
-.list-basic li    { color: var(--accent-2); }
+.list-free li     { color: #0da5d3; }
+.list-basic li    { color: var(--accent-1); }
 .list-standard li { color: var(--accent-3); }
 .list-premium li  { color: var(--accent-4); }
 
@@ -560,8 +553,8 @@ html {
   transition: 0.5s ease;
 }
 
-.btn-free     { background-color: var(--accent-1); }
-.btn-basic    { background-color: var(--accent-2); }
+.btn-free     { background-color: #0da5d3; }
+.btn-basic    { background-color: var(--accent-1); }
 .btn-standard { background-color: var(--accent-3); }
 .btn-premium  { background-color: var(--accent-4); }
 
