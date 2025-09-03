@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Agency</title>
+    <title>Elizabeth Davies</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
     <nav class="navbar">
         <div class="logo">
             <a href="#">
-                <span>C</span>ode<span>A</span>nd<span>C</span>reate
+                <span>E</span>lizabeth<span>D</span>avies
             </a>
         </div>
         <div class="nav-list">
@@ -40,242 +40,193 @@
     <!--End of Menu-->
     
     <div class="container">
-        <!-- Section-1 -->
-        <section class="section-1" id="home">
-            <div class="banner">
-                <h1 class="banner-heading">
-                    <span class="heading-1">Business Ideas</span>
-                    <span class="heading-2">Consulting</span>
-                    <span class="heading-3">Digital Marketing</span>
-                    <span class="heading-4">Strategy</span> 
-                </h1>
-                <p class="banner-paragraph">Lorem ipsum dolor sit.</p>
-                <button class="banner-btn">Discover Now</button>
-            </div>
-        </section>
-        <!-- End of Section-1 -->
+<!-- Section-1 -->
+<section class="section-1" id="home">
+    <div class="banner">
+      <!-- Small intro text -->
+      <p class="intro-text">Hi,</p>
+  
+      <!-- Main Name -->
+      <h2 class="main-name">I am Elizabeth Davies</h2>
+      <!-- Animated Headings -->
+      <h5 class="banner-heading">
+        <span class="heading-1">Pastor</span>
+        <span class="heading-2">Mentor</span>
+        <span class="heading-3">Guide</span>
+        <span class="heading-4">Counselor</span>
+      </h5>
+  
+      <!-- About line -->
+      <p class="about-line">Walking with you on life’s journey of faith and growth.</p>
+  
+      <button class="banner-btn">About Me</button>
+    </div>
+  </section>
+  <!-- End of Section-1 -->
 
-        <!-- Section-2 -->
-        <section class="section-2" id="about-us">
-            <h1 class="section-heading">About Us</h1>
-            <div class="section-heading-line"></div>
-            <div class="video-wrapper">
-                <video class="video" src="images/about-us-video.mp4"></video>
-                <div class="controls">
-                    <div class="video-bar-wrapper">
-                        <div class="video-bar"></div>
-                    </div>
-                    <div class="buttons">
-                        <button>
-                            <i class="far fa-play-circle"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <p class="section-2-paragraph">
-                <i class="fas fa-quote-left"></i>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Sit ea maxime autem numquam labore neque officiis
-                    facilis libero, natus ratione voluptates.
-                    Ex ullam totam repellat facere? Ut vel illo nesciunte.
-                    Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. 
-                    Lorem ipsum dolor sit amet. 
-                    <i class="fas fa-quote-right"></i>
-            </p>
-        </section>
-        <!-- End of Section-2 -->
+  <!-- Section-2 -->
+<section class="section-2" id="about-us">
+    <div class="content-wrapper">
+      <h1 class="section-heading">About Me</h1>
+      <div class="section-heading-line"></div>
+      <p class="section-2-paragraph">
+        <i class="fas fa-quote-left"></i>
+        Elizabeth Davies is a woman deeply passionate 
+        about inspiring others to experience God’s 
+        greatness in every area of their lives through 
+        a relationship rooted in faith and absolute reliance 
+        on the sovereignty of God. Having endured numerous life challenges,
+         Elizabeth’s unwavering faith in God’s word has been her anchor and guide.  
+        <i class="fas fa-quote-right"></i>
+      </p>
+    </div>
+  </section>
+  <!-- End of Section-2 --> 
 
-        <!-- Section 3-->
-        <section class="section-3" id="pricing">
-            <h1 class="section-heading">Pricing</h1>
-            <div class="section-heading-line"></div>
-            <div class="swiper-container">
-            <div class="pricing-cards-wrapper swiper-wrapper">
-            <div class="pricing-card swiper-slide">
-                <div class="pricing-card-front">
-                    <h1 class="pricing-card-heading heading-free">FREE</h1>
-                    <h3 class="pricing-card-price">$0</h3>
-                    <ul class="pricing-card-list list-free">
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <span>Pricing Card Item</span>
-                        </li>
+  <!-- EVENTS SECTION -->
+  <section id="events" class="events-section">
+    <div class="container">
+      <h1 class="section-title">Events</h1>
+      <div class="events-stack" id="eventsStack">
+        <img src="images/project1.jpg" alt="Event 1" class="event-image border-red">
+        <img src="images/project2.jpg" alt="Event 2" class="event-image border-blue">
+        <img src="images/project3.jpg" alt="Event 3" class="event-image border-green">
+        <img src="images/project4.jpg" alt="Event 4" class="event-image border-orange">
+        <img src="images/project5.jpg" alt="Event 5" class="event-image border-purple">
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- JS -->
+  <script>
+    const stack = document.getElementById("eventsStack");
+    const images = stack.querySelectorAll(".event-image");
+  
+    // IntersectionObserver to start animation when section is visible
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          images.forEach(img => img.style.animationPlayState = "running");
+        }
+      });
+    }, { threshold: 0.3 });
+  
+    observer.observe(document.getElementById("events"));
+  
+    // Move slid-out image to the back
+    images.forEach(img => {
+      img.addEventListener("animationiteration", () => {
+        stack.appendChild(img);
+      });
+    });
+  </script>
+        
 
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <span>Pricing Card Item</span>
-                        </li>
-
-                        <li>
-                            <i class="fas fa-times"></i>
-                            <span>Pricing Card Item</span>
-                        </li>
-
-                        <li>
-                            <i class="fas fa-times"></i>
-                            <span>Pricing Card Item</span>
-                        </li>
-
-                        <li>
-                            <i class="fas fa-times"></i>
-                            <span>Pricing Card Item</span>
-                        </li>
-                    </ul>
-                    <button class="pricing-card-btn btn-free">
-                        Choose Plan
-                    </button>
-                </div>
-                <div class="pricing-card-back back-free">
-                    <a href="#">Order Now</a>
-                </div>
-            </div>
-
-            <div class="pricing-card swiper-slide">
-                <div class="pricing-card-front">
-                    <h1
-                    class="pricing-card-heading heading-basic">BASIC</h1>
-                    <h3 class="pricing-card-price">$199</h3>
-                    <ul class="pricing-card-list list-basic">
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <span>Pricing Card Item</span>
-                        </li>
-
-                        <li>
-                            <i class="fas fa-times"></i>
-                            <span>Pricing Card Item</span>
-                        </li>
-
-                        <li>
-                            <i class="fas fa-times"></i>
-                            <span>Pricing Card Item</span>
-                        </li>
-
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <span>Pricing Card Item</span>
-                        </li>
-
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <span>Pricing Card Item</span>
-                        </li>
-                    </ul>
-                    <button class="pricing-card-btn btn-basic">
-                        Choose Plan
-                    </button>
-                </div>
-                <div class="pricing-card-back back-basic">
-                    <a href="#">Order Now</a>
-                </div>
-            </div>
-
-            <div class="pricing-card swiper-slide">
-                <div class="pricing-card-front">
-                    <h1
-                    class="pricing-card-heading heading-standard">STANDARD</h1>
-                    <h3 class="pricing-card-price">$299</h3>
-                    <ul class="pricing-card-list list-standard">
-                        <li>
-                            <i class="fas fa-times"></i>
-                            <span>Pricing Card Item</span>
-                        </li>
-
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <span>Pricing Card Item</span>
-                        </li>
-
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <span>Pricing Card Item</span>
-                        </li>
-
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <span>Pricing Card Item</span>
-                        </li>
-
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <span>Pricing Card Item</span>
-                        </li>
-                    </ul>
-                    <button class="pricing-card-btn btn-standard">
-                        Choose Plan
-                    </button>
-                </div>
-                <div class="pricing-card-back back-standard">
-                    <a href="#">Order Now</a>
-                </div>
-            </div>
-
-            <div class="pricing-card swiper-slide">
-                <div class="pricing-card-front">
-                    <h1
-                    class="pricing-card-heading heading-premium">PREMIUM</h1>
-                    <h3 class="pricing-card-price">$400</h3>
-                    <ul class="pricing-card-list list-premium">
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <span>Pricing Card Item</span>
-                        </li>
-
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <span>Pricing Card Item</span>
-                        </li>
-
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <span>Pricing Card Item</span>
-                        </li>
-
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <span>Pricing Card Item</span>
-                        </li>
-
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <span>Pricing Card Item</span>
-                        </li>
-                    </ul>
-                    <button class="pricing-card-btn btn-premium">
-                        Choose Plan
-                    </button>
-                </div>
-                <div class="pricing-card-back back-premium">
-                    <a href="#">Order Now</a>
-                </div>
-            </div>
+       <!-- Section 3-->
+<section class="section-3" id="blog">
+    <div class="content-wrapper">
+      <h1 class="section-heading">Latest Blog Posts</h1>
+    </div>
+  
+    <div class="swiper-container">
+      <div class="pricing-cards-wrapper swiper-wrapper">
+  
+        <!-- Blog Post 1 -->
+        <div class="pricing-card swiper-slide">
+          <div class="pricing-card-front">
+            <h1 class="pricing-card-heading heading-free">01 Dec, 2022</h1>
+            <h3 class="pricing-card-price">The Power of Sisterhood</h3>
+            <ul class="pricing-card-list list-free">
+              <li>
+                <i class="fas fa-check"></i>
+                <span>
+                  One of the greatest gifts of empowerment is community. 
+                  Women thrive when they uplift each ...
+                </span>
+              </li>
+            </ul>
+            <button class="pricing-card-btn btn-free">
+              Read More
+            </button>
+          </div>
+          <div class="pricing-card-back back-free">
+            <a href="#">Continue Reading</a>
           </div>
         </div>
-        </section>
-        <!-- End of Section-3 -->
-
+  
+        <!-- Blog Post 2 -->
+        <div class="pricing-card swiper-slide">
+          <div class="pricing-card-front">
+            <h1 class="pricing-card-heading heading-basic">10 Jan, 2023</h1>
+            <h3 class="pricing-card-price">Stepping into Greatness</h3>
+            <ul class="pricing-card-list list-basic">
+              <li>
+                <i class="fas fa-check"></i>
+                <span>
+                  Many women struggle with self-doubt, fear, and societal expectations. 
+                  But through faith, mentorship, and personal ...
+                </span>
+              </li>
+            </ul>
+            <button class="pricing-card-btn btn-basic">
+              Read More
+            </button>
+          </div>
+          <div class="pricing-card-back back-basic">
+            <a href="#">Continue Reading</a>
+          </div>
+        </div>
+  
+        <!-- Blog Post 3 -->
+        <div class="pricing-card swiper-slide">
+          <div class="pricing-card-front">
+            <h1 class="pricing-card-heading heading-standard">15 Feb, 2023</h1>
+            <h3 class="pricing-card-price">What Is True Empowerment?</h3>
+            <ul class="pricing-card-list list-standard">
+              <li>
+                <i class="fas fa-check"></i>
+                <span>
+                  Empowerment is more than a buzzword; it’s a way of life. 
+                  It means: Knowing Your ...
+                </span>
+              </li>
+            </ul>
+            <button class="pricing-card-btn btn-standard">
+              Read More
+            </button>
+          </div>
+          <div class="pricing-card-back back-standard">
+            <a href="#">Continue Reading</a>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  <!-- End of Section-3 -->
+  
         <!-- Section 4-->
         <section class="section-4" id="contact">
-            <h1 class="section-heading">Contact</h1>
+            <h1 class="section-heading">Contact Me</h1>
             <div class="section-heading-line"></div>
             <div class="contact-wrapper">
                 <div class="contact-details">
                     <div class="phone">
                         <i class="fas fa-mobile-alt"></i>
                         <h3>Phone</h3>
-                        <p>+234 905 0821 027</p>
-                        <p>+234 708 4992 218</p>
+                        <p>+234 905 0800 000</p>
+                        <p>+234 708 4900 000</p>
                     </div>
                     <div class="address">
                         <i class="fas fa-map-marker-alt"></i>
                         <h3>Address</h3>
-                        <p>Old Itu Road, Nigeria</p>
                         <p>Lansing, Michigan</p>
                     </div>
                     <div class="email">
                         <i class="far fa-envelope"></i>
                         <h3>Email</h3>
-                        <p>iydeejaymes@gmail.com</p>
+                        <p>elizabethdavies@gmail.com</p>
                         <p>Support@gmail.com</p>
                     </div>
                 </div>
@@ -294,14 +245,23 @@
         <footer class="footer">
             <div class="footer-nav">
                 <a href="#home">Home</a>
-                <a href="#about-us">About Us</a>
-                <a href="#pricing">Pricing</a>
+                <a href="#about-us">About Me</a>
+                <a href="#pricing">Blog</a>
                 <a href="#contact">Contact</a>
             </div>
-            <p class="copyright">Copyright &copy; IydeeJames 2022</p>
+            <p class="copyright">Copyright &copy; Elizabeth Davies.2025</p>
         </footer>
         <!-- Footer-->
     </div>
+    <!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true,
+    duration: 1000
+  });
+</script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="script.js"> </script>

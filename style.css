@@ -1,14 +1,3 @@
-/* =============================
-   Business Agency – style.css (fixed & responsive)
-   Preserve existing design; fix responsiveness & animation bugs.
-   - Valid CSS (typos fixed)
-   - Mobile-first safety
-   - 100dvh fallbacks
-   - Fluid widths, max-widths
-   - Reduced-motion support
-   - Extra breakpoints for phones
-   ============================= */
-
 /* -----------------------------
    0) Root & Resets
    ----------------------------- */
@@ -33,13 +22,13 @@ html {
 
 :root {
   /* Colors */
-  --bg-dark: #222020;
-  --bg-darker: #222020e1;
+  --bg-dark: #25324B;
+  --bg-darker: #25324B;
   --text-light: #eee;
   --text-mid: #ccc;
   --text-dim: #aaa;
-  --accent-1: #0da5d3;
-  --accent-1-dark: #087285;
+  --accent-1: #c6a169;
+  --accent-1-dark: #c6a169;
   --accent-2: #bdba0e;
   --accent-3: #e23b3b;
   --accent-4: #3be286;
@@ -202,97 +191,107 @@ html {
   transform-origin: right;
 }
 
-/* -----------------------------
-   3) Section 1 – Hero/Banner
-   ----------------------------- */
 .section-1 {
   width: 100%;
-  /* Use modern viewport unit with fallback to avoid mobile UI cutoffs */
   min-height: 100dvh;
-  background: url(images/bg4.jpg) no-repeat center center / cover;
+  background: url(images/bg_banner1.jpg) no-repeat center center / cover;
   position: relative;
 }
+
 @supports not (height: 100dvh) {
   .section-1 { min-height: calc(var(--vh) * 100); }
 }
 
-.banner {
-  width: 100%;
+/* Dark overlay */
+.section-1::before {
+  content: "";
   position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  padding: 0 2rem;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
 }
 
+/* Banner Content */
+.banner {
+  position: absolute;
+  top: 25%;
+  left: 8%; /* less cramped */
+  text-align: left;
+  max-width: 850px; /* wider text container */
+  z-index: 2;
+}
+
+/* Intro text */
+.intro-text {
+  font-size: 1.8rem;
+  color: #f0f0f0;
+  margin-bottom: 1rem;
+  margin-top: 8rem;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  animation: fadeAnimation 1s 0.5s forwards;
+}
+
+/* Name */
+.main-name {
+  font-size: 3.8rem;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 2rem;
+  margin-bottom: -1rem;
+  letter-spacing: 0.08em; /* extra spacing */
+  opacity: 0;
+  animation: fadeAnimation 1s 1s forwards;
+}
+
+/* Animated headings */
 .banner-heading {
-  margin-bottom: 4rem;
-  height: 20rem;
+  margin-bottom: 2rem;
+  height: 14rem;
   perspective: 50rem;
-  overflow: hidden;
   position: relative;
 }
 
+
+
 .banner-heading span {
   font-family: 'Oswald', sans-serif;
-  font-size: 12rem;
+  font-size: 2.8rem;
   font-weight: 400;
   text-transform: uppercase;
   color: #fff;
-  text-shadow: 0.3rem 0.3rem 0.6rem var(--shadow-mid);
+  text-shadow: 0.2rem 0.2rem 0.5rem rgba(0,0,0,0.6);
   position: absolute;
-  inset-inline: 0;
-  display: flex;
-  justify-content: center;
+  left: 0;
   transform: translateZ(8rem);
   opacity: 0;
-  letter-spacing: 3rem;
+  letter-spacing: 1rem; /* more spacing */
   will-change: transform, opacity, letter-spacing;
 }
 
-.heading-1 { animation: animateHeading 12s 2s infinite; }
-.heading-2 { animation: animateHeading 12s 5s infinite; }
-.heading-3 { animation: animateHeading 12s 8s infinite; }
-.heading-4 { animation: animateHeading 12s 11s infinite; }
-
-@keyframes animateHeading {
-  0%   { transform: translateZ(8rem); opacity: 0; letter-spacing: 3rem; }
-  3%   { transform: translateZ(0);   opacity: 1; letter-spacing: 1.5rem; }
-  25%  { transform: translateZ(0);   opacity: 1; letter-spacing: 1.5rem; }
-  28%  { transform: translateZ(8rem); opacity: 0; letter-spacing: 3rem; }
-  100% { transform: translateZ(8rem); opacity: 0; letter-spacing: 3rem; }
-}
-
-.banner-paragraph {
-  font-size: 4rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.6);
-  width: min(30%, 60rem);
-  margin: 0 auto 4rem auto;
-  padding: 1rem 0;
-  box-shadow: 1rem 1rem 5rem var(--shadow-mid);
+/* About line */
+.about-line {
+  font-size: 2rem;
+  color: #e0e0e0;
+  margin-bottom: 3rem;
+  line-height: 1.4;
   opacity: 0;
-  visibility: hidden;
   animation: fadeAnimation 1s 1.5s forwards;
 }
 
+/* Button */
 .banner-btn {
-  width: 30rem;
-  min-height: 6rem;
+  width: 20rem;
+  min-height: 5rem;
   background: linear-gradient(to right, var(--accent-1), var(--accent-1-dark));
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.8rem;
   text-transform: uppercase;
   border-radius: 3rem;
-  border: 0.1rem solid var(--accent-1-dark);
-  box-shadow: 1rem 2rem 3rem var(--shadow-mid);
-  text-shadow: 0.6rem 0.3rem 0.2rem rgba(0, 0, 0, 0.4);
+  border: none;
+  box-shadow: 0.5rem 1rem 2rem rgba(0,0,0,0.4);
   cursor: pointer;
   opacity: 0;
-  visibility: hidden;
   animation: fadeAnimation 1s 2s forwards;
   position: relative;
   overflow: hidden;
@@ -309,140 +308,184 @@ html {
   transform: skewX(-30deg);
   transition: left 0.5s ease;
 }
-
 .banner-btn:hover::before { left: 100%; }
 
+/* Animations */
+@keyframes animateHeading {
+  0%   { transform: translateZ(8rem); opacity: 0; letter-spacing: 1.2rem; }
+  3%   { transform: translateZ(0);   opacity: 1; letter-spacing: 0.5rem; }
+  25%  { transform: translateZ(0);   opacity: 1; letter-spacing: 0.5rem; }
+  28%  { transform: translateZ(8rem); opacity: 0; letter-spacing: 1.2rem; }
+  100% { transform: translateZ(8rem); opacity: 0; letter-spacing: 1.2rem; }
+}
+
+.heading-1 { animation: animateHeading 12s 2s infinite; }
+.heading-2 { animation: animateHeading 12s 5s infinite; }
+.heading-3 { animation: animateHeading 12s 8s infinite; }
+.heading-4 { animation: animateHeading 12s 11s infinite; }
+
 @keyframes fadeAnimation {
-  0%   { opacity: 0; visibility: hidden; }
-  100% { opacity: 1; visibility: visible; }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
+
+/* =====================
+   Desktop adjustments
+===================== */
+@media (min-width: 992px) {
+  .section-1 { background-position: center 15%; }
+  .main-name { font-size: 4.5rem; }
+  .banner-heading span { font-size: 3.2rem; }
+  .about-line { font-size: 2.2rem; }
+}
+
+/* =====================
+   Mobile-specific styles
+===================== */
+@media (max-width: 768px) {
+  .banner {
+    top: 20%;
+    left: 5%;
+    max-width: 90%;
+  }
+
+  .intro-text {
+    font-size: 2.4rem;
+    margin-top: 6rem;
+  }
+
+  .main-name {
+    font-size: 3.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .banner-heading {
+    height: 8rem;
+  }
+
+  .banner-heading span {
+    font-size: 1.8rem;
+    letter-spacing: 0.6rem;
+  }
+
+  .about-line {
+    font-size: 2.5rem;
+    margin-top: -6rem;
+  }
+
+  .banner-btn {
+    width: 14rem;
+    min-height: 4rem;
+    font-size: 2rem;
+  }
+}
+
+
 
 /* -----------------------------
-   4) Section 2 – About/Video
+   4) Section 2 
    ----------------------------- */
-.section-2 {
-  width: 100%;
-  /* Avoid fixed 100vh on mobile */
-  min-height: 100dvh;
-  background-color: var(--bg-dark);
-  display: flex;
-  align-items: center;
-  padding: 0 var(--container-pad-x);
-  position: relative;
-  gap: 2rem;
+   .section-2 {
+    width: 100%;
+    min-height: 100dvh;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    margin-bottom: -12rem;
+  }
+  
+  @supports not (height: 100dvh) {
+    .section-2 { min-height: calc(var(--vh) * 100); }
+  }
+  
+  .content-wrapper {
+    max-width: 800px;
+  }
+  
+  .section-heading {
+    font-size: 3rem;
+    color: #000;
+  }
+  
+  .section-heading-line {
+    width: 80px;
+    height: 4px;
+    background-color: #000;
+    margin: 0 auto 2rem auto;
+  }
+  
+  .section-2-paragraph {
+    font-size: 1.6rem;
+    color: #000;
+    line-height: 1.6;
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    padding: 2rem;
+    position: relative;
+  }
+  
+  .fa-quote-left,
+  .fa-quote-right {
+    font-size: 2.5rem;
+    color: #000;
+  }
+
+  /* =====================
+   Mobile-specific styles
+===================== */
+@media (max-width: 768px) {
+  .section-heading {
+    font-size: 5rem;
+    color: #000;
+
+  }
+
+  .section-2-paragraph {
+    font-size: 1.9rem;
+  }
+  .fa-quote-left,
+  .fa-quote-right {
+    font-size: 2rem;
+    color: #000;
+  }
 }
-@supports not (height: 100dvh) {
-  .section-2 { min-height: calc(var(--vh) * 100); }
-}
-
-.section-2 .section-heading-line { /* keep original style */ }
-.section-2 .section-heading { /* keep original style */ }
-
-.video-wrapper {
-  width: 100rem;
-  height: 50rem;
-  position: absolute;
-  top: 5rem;
-  right: 15rem;
-  box-shadow: 3rem 3rem 3rem var(--shadow-strong);
-  overflow: hidden;
-  border-radius: 0.6rem;
-}
-
-/* Make it fluid by default, but preserve desktop sizing via breakpoints below */
-.video-wrapper,
-.controls { max-width: 100%; }
-
-.video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.2;
-  transition: opacity 0.3s ease;
-}
-
-.controls {
-  width: 100rem; /* original */
-  position: absolute;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  transform: translateY(calc(100% - 0.4rem));
-  transition: transform 0.4s ease;
-}
-
-.video-wrapper:hover .controls { transform: translateY(0); }
-
-.video-bar-wrapper {
-  width: 100%;
-  height: 0.7rem;
-  background-color: #000;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.video-bar {
-  height: 100%;
-  width: 0;
-  background-color: #d30819;
-  transition: width 0.2s linear;
-}
-
-.buttons { padding: 2rem 1rem 1rem 1rem; }
-
-.buttons button {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.buttons i { font-size: 3rem; color: #fff; }
-
-.section-2-paragraph {
-  width: 100rem;
-  position: absolute;
-  bottom: 8rem;
-  right: 15rem;
-  font-size: 2rem;
-  color: #ddd;
-  border-top: 0.4rem double #aaa;
-  border-bottom: 0.4rem double #aaa;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: justify;
-  text-shadow: 1rem 1rem 2rem var(--shadow-strong);
-  line-height: 1.5;
-  background: transparent;
-}
-
-.fa-quote-left { align-self: flex-start; font-size: 5rem; margin-bottom: 2rem; }
-.fa-quote-right { align-self: flex-end;   font-size: 5rem; }
-
+  
 /* -----------------------------
-   5) Section 3 – Pricing / Swiper
+   5) Section 3 – Blog / Swiper
    ----------------------------- */
-.section-3 {
-  width: 100%;
-  min-height: 100dvh;
-  background-color: var(--bg-darker);
-  display: flex;
-  align-items: center;
-  padding-left: var(--container-pad-x);
-  position: relative;
-}
-@supports not (height: 100dvh) {
-  .section-3 { min-height: calc(var(--vh) * 100); }
-}
+   .section-3 {
+    width: 100%;
+    min-height: 100dvh;
+    background-color: var(--bg-darker);
+    display: flex;
+    flex-direction: column; /* stack heading + cards */
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+  
+  .section-heading {
+    font-size: 3rem;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 2rem !important;
+    margin-top: 4rem;
+  }
 
-.pricing-cards-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 5rem;
-}
+  
+  .pricing-cards-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap; /* makes it centered on smaller screens */
+    padding: 2rem 0;
+  }
+  
 
 .pricing-card {
   width: 28rem !important;
@@ -483,9 +526,10 @@ html {
 
 .pricing-card-price {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 7rem;
+  font-size: 2rem;
   color: #fff;
   font-weight: 200;
+  margin-bottom: -8rem;
 }
 
 .pricing-card-list li { margin-bottom: 0.5rem; }
@@ -495,12 +539,11 @@ html {
 .list-standard li { color: var(--accent-3); }
 .list-premium li  { color: var(--accent-4); }
 
-.pricing-card-list i { font-size: 1.8rem; width: 3rem; }
+.pricing-card-list i { font-size: 1.2rem; width: 3rem; }
 
 .pricing-card-list span {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 300;
-  letter-spacing: 0.1rem;
 }
 
 .pricing-card-btn {
@@ -555,13 +598,15 @@ html {
 /* Swiper container safe width */
 .swiper-container { width: 100%; }
 
+
+
 /* -----------------------------
    6) Section 4 – Contact
    ----------------------------- */
 .section-4 {
   width: 100%;
   min-height: 100dvh;
-  background-color: var(--bg-dark);
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   padding: 0 var(--container-pad-x);
@@ -586,20 +631,20 @@ html {
   margin: 4rem;
 }
 
-.contact-details i { font-size: 6rem; color: var(--accent-1); }
+.contact-details i { font-size: 6rem; color: var(--bg-dark); }
 
 .contact-details h3 {
   font-family: 'MADE Soulmaze', sans-serif;
   font-size: 2.5rem;
   margin: 2rem 0;
-  color: #ccc;
+  color: #000 !important;
 }
 
-.contact-details p { font-size: 1.8rem; color: #aaa; }
+.contact-details p { font-size: 1.8rem; color: var(--bg-dark); }
 
 .contact-wrapper h1 {
   font-size: 4.5rem;
-  color: var(--accent-1);
+  color: var(--bg-dark);
   text-transform: uppercase;
   margin-bottom: 3rem;
 }
@@ -613,7 +658,7 @@ html {
 .contact-form input,
 .contact-form textarea {
   padding: 1.5rem;
-  background-color: #444;
+  background-color: var(--bg-dark);
   color: #eee;
   border: none;
   margin-bottom: 2rem;
@@ -637,7 +682,7 @@ html {
   transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-.contact-form input[type="submit"]:hover { background-color: var(--accent-1-dark); }
+.contact-form input[type="submit"]:hover { background-color: var(--bg-dark); }
 .contact-form input[type="submit"]:active { transform: scale(0.98); }
 
 /* -----------------------------
@@ -956,3 +1001,76 @@ p { overflow-wrap: anywhere; }
   .footer { padding-bottom: max(env(safe-area-inset-bottom), 2rem); }
 }
 
+.events-section {
+  background: #fff;
+  padding: 80px 0;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden; 
+  position: relative;
+}
+
+.section-title {
+  font-size: 4.8rem;
+  margin-bottom: 10px;
+}
+
+.events-stack {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  height: 480px;  
+  overflow: hidden;
+}
+
+
+.events-stack .event-image {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: transform 0.6s ease;
+  animation: slideDown 25s infinite;
+  animation-play-state: paused;
+}
+
+
+
+/* Borders only right & bottom, thin */
+.border-red    { border-right: 2px solid #e63946; border-bottom: 2px solid #e63946; }
+.border-blue   { border-right: 2px solid #457b9d; border-bottom: 2px solid #457b9d; }
+.border-green  { border-right: 2px solid #2a9d8f; border-bottom: 2px solid #2a9d8f; }
+.border-orange { border-right: 2px solid #f4a261; border-bottom: 2px solid #f4a261; }
+.border-purple { border-right: 2px solid #9d4edd; border-bottom: 2px solid #9d4edd; }
+
+/* Stepped stacking */
+.events-stack .event-image:nth-child(1) { top: 0px;  left: 0px;  z-index: 5; animation-delay: 0s; }
+.events-stack .event-image:nth-child(2) { top: 8px; left: 8px; z-index: 4; animation-delay: 5s; }
+.events-stack .event-image:nth-child(3) { top: 16px; left: 16px; z-index: 3; animation-delay: 10s; }
+.events-stack .event-image:nth-child(4) { top: 24px; left: 24px; z-index: 2; animation-delay: 15s; }
+.events-stack .event-image:nth-child(5) { top: 32px; left: 32px; z-index: 1; animation-delay: 20s; }
+
+/* Slide out animation */
+@keyframes slideDown {
+  0%   { transform: translateY(0); opacity: 1; }
+  20%  { transform: translateY(0); opacity: 1; }
+  25%  { transform: translateY(120%); opacity: 0; }
+  100% { transform: translateY(120%); opacity: 0; }
+}
+
+/* Responsive images for mobile */
+@media (max-width: 600px) {
+  .events-stack {
+    max-width: 320px;
+    height: 290px;
+  }
+  .section-title {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+  }
+
+
+}
