@@ -487,6 +487,84 @@ html {
 }
 
 
+/* Services Section */
+.services {
+  background: #f9f9f9;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 4rem;
+  color: #222;
+  position: relative;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: var(--bg-darker);
+  border-radius: 1rem;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.service-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: #fff;
+}
+
+.service-text {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 1.8rem;
+  color: #fff;
+}
+
+.service-link {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 2rem;
+  background: linear-gradient(135deg, #c6a169, #e7ba77);
+  color: #fff;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.service-link:hover {
+  background: linear-gradient(135deg, #e6b771, #c6a169);
+}
+
+/* =====================
+   Service Mobile (≤768px)
+===================== */
+@media (max-width: 768px) {
+  .service-title {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+  
+  .service-text {
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
+}
+
   
 /* -----------------------------
    5) Section 3 – Blog / Swiper
@@ -571,7 +649,7 @@ html {
   font-size: 1.4rem;
   font-weight: 300;
   color: #000;
-  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
   line-height: 1.6;
 }
 
@@ -625,15 +703,22 @@ html {
 
 .pricing-card-back a { font-size: 2.5rem; color: #fff; }
 
+/* Modal background */
 .modal {
-  display: none; 
+  display: none;
   position: fixed;
-  z-index: 1000;
   inset: 0;
-  background: rgba(0,0,0,0.7);
+  background: #fff; /* solid white instead of dark overlay */
+  z-index: 1000;
   padding: 2rem;
-  overflow-y: auto;
+  overflow-y: auto; /* modal content can scroll if long */
 }
+
+/* Prevent background page from scrolling */
+body.modal-open {
+  overflow: hidden;
+}
+
 
 .modal-content {
   background: #fff;

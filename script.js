@@ -8,27 +8,35 @@ menu.addEventListener('click', () => {
 });
 //End of Navbar
 
-// Modal logic
 document.addEventListener("DOMContentLoaded", () => {
+  // Open modal
   document.querySelectorAll(".pricing-card-btn").forEach(button => {
     button.addEventListener("click", () => {
       const modalId = button.getAttribute("data-modal");
-      document.getElementById(modalId).style.display = "block";
+      const modal = document.getElementById(modalId);
+      modal.style.display = "block";
+      document.body.classList.add("modal-open"); // disable page scroll
     });
   });
 
+  // Close modal
   document.querySelectorAll(".modal-close").forEach(closeBtn => {
     closeBtn.addEventListener("click", () => {
-      closeBtn.closest(".modal").style.display = "none";
+      const modal = closeBtn.closest(".modal");
+      modal.style.display = "none";
+      document.body.classList.remove("modal-open"); // restore scroll
     });
   });
 
+  // Close if clicking outside modal content
   window.addEventListener("click", e => {
     if (e.target.classList.contains("modal")) {
       e.target.style.display = "none";
+      document.body.classList.remove("modal-open");
     }
   });
 });
+
 
 
 /* Section 3 pricing Cards
