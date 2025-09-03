@@ -8,41 +8,30 @@ menu.addEventListener('click', () => {
 });
 //End of Navbar
 
-// Section 2 Video
-  const video = document.querySelector('.video')
-  const btn = document.querySelector('.buttons button i');
-  const bar = document.querySelector('.video-bar')
-  
-  const playPause = () => {
-    if(video.paused) {
-      video.play()
-      btn.className = 'far fa-pause-circle'
-      video.style.opacity = '.7'
-    } else {
-      video.pause()
-      btn.className = 'far fa-play-circle'
-      video.style.opacity = '.3'
+// Modal logic
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".pricing-card-btn").forEach(button => {
+    button.addEventListener("click", () => {
+      const modalId = button.getAttribute("data-modal");
+      document.getElementById(modalId).style.display = "block";
+    });
+  });
+
+  document.querySelectorAll(".modal-close").forEach(closeBtn => {
+    closeBtn.addEventListener("click", () => {
+      closeBtn.closest(".modal").style.display = "none";
+    });
+  });
+
+  window.addEventListener("click", e => {
+    if (e.target.classList.contains("modal")) {
+      e.target.style.display = "none";
     }
-  }
-  
-  
-  btn.addEventListener('click', () => {
-    playPause()
-  })
+  });
+});
 
-  video.addEventListener('timeupdate', () => {
-    console.log(video.currentTime, video.duration)
-    const barWidth = video.currentTime/video.duration
-    bar.style.width = `${ barWidth * 100}%`
-    if(video.ended){
-        btn.className = 'far fa-play-circle'
-        video.style.opacity = '0.3'
-    }
-  })
 
-// End of Section 2 Video
-
-// Section 3 pricing Cards
+/* Section 3 pricing Cards
 var swiper = new Swiper('.swiper-container', {
     effect: 'coverflow',
     grabCursor: true,
@@ -56,4 +45,4 @@ var swiper = new Swiper('.swiper-container', {
       slideShadows: true,
     }
 });
-// End of Section 3 pricing Cards
+ End of Section 3 pricing Cards */

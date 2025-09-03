@@ -559,23 +559,18 @@ html {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2rem;
   color: #000;
-  font-weight: 200;
-  margin-bottom: -8rem;
+  font-weight: 600;
+  margin-bottom: -10rem;
 }
 
-.pricing-card-list li { margin-bottom: 0.5rem; }
-
-.list-free li     { color: #000; }
-.list-basic li    { color: #000; }
-.list-standard li { color: #000; }
-.list-premium li  { color: #000; }
-
-.pricing-card-list i { font-size: 1.2rem; width: 3rem; }
-
-.pricing-card-list span {
+.pricing-card-text {
   font-size: 1.4rem;
   font-weight: 300;
+  color: #000;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
 }
+
 
 .pricing-card-btn {
   width: 18rem;
@@ -626,6 +621,70 @@ html {
 
 .pricing-card-back a { font-size: 2.5rem; color: #fff; }
 
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 1rem;
+  max-width: 700px;
+  margin: 5% auto;
+  padding: 2rem;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-content h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-date {
+  font-size: 1.4rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.modal-content p, 
+.modal-content ul {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.modal-content ul {
+  padding-left: 1.5rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #444;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
 
 @media (max-width: 768px) {
   .pricing-cards-wrapper {
@@ -639,6 +698,18 @@ html {
     width: 80% !important;
     margin: 0 auto;          /* center each card */
   }
+
+  .pricing-card-text {
+    font-size: 2rem;
+    padding: 2rem;
+  }
+
+  .pricing-card-price {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: -10rem;
+  }
+  
 }
 
 

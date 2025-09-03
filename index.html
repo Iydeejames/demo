@@ -50,10 +50,12 @@
       <h2 class="main-name">I am Elizabeth Davies</h2>
       <!-- Animated Headings -->
       <h5 class="banner-heading">
-        <span class="heading-1">Pastor</span>
+        <span class="heading-1">Teacher</span>
         <span class="heading-2">Mentor</span>
         <span class="heading-3">Guide</span>
-        <span class="heading-4">Counselor</span>
+        <span class="heading-4">Author</span>
+        <span class="heading-4">Intercessor</span>
+
       </h5>
   
       <!-- About line -->
@@ -122,8 +124,7 @@
     });
   </script>
         
-
-       <!-- Section 3-->
+<!-- Section 3-->
 <section class="section-3" id="blog">
     <div class="content-wrapper">
       <h1 class="section-heading">Latest Blog Posts</h1>
@@ -137,21 +138,12 @@
           <div class="pricing-card-front">
             <h1 class="pricing-card-heading heading-free">01 Dec, 2022</h1>
             <h3 class="pricing-card-price">The Power of Sisterhood</h3>
-            <ul class="pricing-card-list list-free">
-              <li>
-                <i></i>
-                <span>
-                  One of the greatest gifts of empowerment is community. 
-                  Women thrive when they uplift each ...
-                </span>
-              </li>
-            </ul>
-            <button class="pricing-card-btn btn-free">
-              Read More
-            </button>
-          </div>
-          <div class="pricing-card-back back-free">
-            <a href="#">Continue Reading</a>
+            <p class="pricing-card-text">
+              One of the greatest gifts of empowerment is community. 
+              Women thrive when they uplift each ...
+            </p>
+            <button class="pricing-card-btn btn-free" 
+                    data-modal="modal1">Read More</button>
           </div>
         </div>
   
@@ -160,21 +152,12 @@
           <div class="pricing-card-front">
             <h1 class="pricing-card-heading heading-basic">10 Jan, 2023</h1>
             <h3 class="pricing-card-price">Stepping into Greatness</h3>
-            <ul class="pricing-card-list list-basic">
-              <li>
-                <i></i>
-                <span>
-                  Many women struggle with self-doubt, fear, and societal expectations. 
-                  But through faith, mentorship, and personal ...
-                </span>
-              </li>
-            </ul>
-            <button class="pricing-card-btn btn-basic">
-              Read More
-            </button>
-          </div>
-          <div class="pricing-card-back back-basic">
-            <a href="#">Continue Reading</a>
+            <p class="pricing-card-text">
+              Many women struggle with self-doubt, fear, and societal expectations. 
+              But through faith, mentorship, and personal ...
+            </p>
+            <button class="pricing-card-btn btn-basic" 
+                    data-modal="modal2">Read More</button>
           </div>
         </div>
   
@@ -183,21 +166,12 @@
           <div class="pricing-card-front">
             <h1 class="pricing-card-heading heading-standard">15 Feb, 2023</h1>
             <h3 class="pricing-card-price">What Is True Empowerment?</h3>
-            <ul class="pricing-card-list list-standard">
-              <li>
-                <i></i>
-                <span>
-                  Empowerment is more than a buzzword; it’s a way of life. 
-                  It means: Knowing Your ...
-                </span>
-              </li>
-            </ul>
-            <button class="pricing-card-btn btn-standard">
-              Read More
-            </button>
-          </div>
-          <div class="pricing-card-back back-standard">
-            <a href="#">Continue Reading</a>
+            <p class="pricing-card-text">
+              Empowerment is more than a buzzword; it’s a way of life. 
+              It means: Knowing Your ...
+            </p>
+            <button class="pricing-card-btn btn-standard" 
+                    data-modal="modal3">Read More</button>
           </div>
         </div>
   
@@ -205,6 +179,68 @@
     </div>
   </section>
   <!-- End of Section-3 -->
+  
+  <!-- =====================
+       MODALS
+  ===================== -->
+  
+  <!-- Modal 1 -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <img src="images/service1.jpg" alt="The Power of Sisterhood">
+      <h1>The Power of Sisterhood</h1>
+      <p class="modal-date">01 Dec, 2022</p>
+      <p>
+        One of the greatest gifts of empowerment is community. 
+        Women thrive when they uplift each other instead of competing. 
+        At Elizabeth Davies’ events and mentorship programs, women come 
+        together to pray, grow, and break limitations. It’s about encouraging 
+        one another to shine—because when one woman rises, we all rise.
+      </p>
+    </div>
+  </div>
+  
+  <!-- Modal 2 -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <img src="images/service2.jpg" alt="Stepping into Greatness">
+      <h1>Stepping into Greatness</h1>
+      <p class="modal-date">10 Jan, 2023</p>
+      <p>
+        Many women struggle with self-doubt, fear, and societal expectations. 
+        But through faith, mentorship, and personal growth, these barriers can 
+        be shattered. Elizabeth Davies’ Women Empowerment Programs, Coaching, 
+        and Retreats provide a safe and transformative space for women to:
+      </p>
+      <ul>
+        <li>✨ Find clarity in their calling</li>
+        <li>✨ Build confidence and resilience</li>
+        <li>✨ Strengthen their faith and leadership skills</li>
+        <li>✨ Connect with a supportive sisterhood</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Modal 3 -->
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <img src="images/service3.jpg" alt="What Is True Empowerment?">
+      <h1>What Is True Empowerment?</h1>
+      <p class="modal-date">15 Feb, 2023</p>
+      <p>Empowerment is more than a buzzword; it’s a way of life. It means:</p>
+      <ul>
+        <li>✅ Knowing Your Worth – Recognizing that you are fearfully and wonderfully made.</li>
+        <li>✅ Owning Your Voice – Speaking with confidence and standing up for your beliefs.</li>
+        <li>✅ Embracing Your Purpose – Walking boldly in the path God has designed for you.</li>
+        <li>✅ Supporting Other Women – Building a community where women uplift, encourage, and inspire each other.</li>
+      </ul>
+    </div>
+  </div>
+  
+  
   
         <!-- Section 4-->
         <section class="section-4" id="contact">
