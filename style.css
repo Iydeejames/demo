@@ -521,7 +521,7 @@ html {
 .pricing-card {
   width: 28rem !important;
   height: 45rem !important;
-  background-color: var(--bg-dark);
+  background-color: #ffffff;
   border-radius: 1.8rem;
   box-shadow: 2rem 2rem 6rem var(--shadow-strong);
   position: relative; /* to place .pricing-card-back absolute */
@@ -558,17 +558,17 @@ html {
 .pricing-card-price {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2rem;
-  color: #fff;
+  color: #000;
   font-weight: 200;
   margin-bottom: -8rem;
 }
 
 .pricing-card-list li { margin-bottom: 0.5rem; }
 
-.list-free li     { color: #0da5d3; }
-.list-basic li    { color: var(--accent-1); }
-.list-standard li { color: var(--accent-3); }
-.list-premium li  { color: var(--accent-4); }
+.list-free li     { color: #000; }
+.list-basic li    { color: #000; }
+.list-standard li { color: #000; }
+.list-premium li  { color: #000; }
 
 .pricing-card-list i { font-size: 1.2rem; width: 3rem; }
 
