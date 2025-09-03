@@ -191,6 +191,10 @@ html {
   transform-origin: right;
 }
 
+
+/* -----------------------------
+   Section 1
+   ----------------------------- */
 .section-1 {
   width: 100%;
   height: 100vh; /* use vh, not dvh, to avoid expansion on scroll */
