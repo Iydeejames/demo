@@ -399,25 +399,24 @@ html {
 @media (max-width: 576px) {
   #milestone {
     padding: 2rem 1rem; /* keep section height */
-    overflow: hidden;    /* hide any minor overflow */
+    overflow: hidden; 
+    height: 60vh !important;   /* hide any minor overflow */
   }
 
   #milestone .row {
     flex-direction: column; /* stack items vertically */
     align-items: center;
-    gap: 1rem;              /* control vertical spacing without negative margins */
+    gap: 1rem;              
   }
 
   #milestone .col-lg-2,
   #milestone .col-sm-6 {
-    margin-bottom: 0;       /* remove negative margins */
     max-width: 90%;
     text-align: center;
   }
 
   #milestone .counter {
     font-size: 3.9rem;
-    margin-top: 0;
   }
 
   #milestone p {
