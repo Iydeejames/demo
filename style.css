@@ -218,6 +218,7 @@ html {
 }
 
 .intro-text {
+  margin-top: 6rem !important;
   font-size: 2rem;
   color: #f0f0f0;
   margin-bottom: 1rem;
@@ -404,93 +405,89 @@ html {
 }
 
 
-/* -----------------------------
-   4) Section 2 – About Me
------------------------------ */
-.section-2 {
+/* =====================
+   About Me Section
+===================== */
+.about-me-section {
   width: 100%;
-  background-color: #ffffff;
+  padding: 16rem 2rem; /* increased height */
+  background: #ffffff; /* white background */
+  color: #111; /* black text */
   display: flex;
-  flex-direction: column;
-  justify-content: center;  
+  justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 6rem 2rem;
-  box-sizing: border-box;
+  flex-direction: column;
+  position: relative;
 }
 
-.section-2 .section-heading {
-  font-size: 3rem;
-  color: #000 !important;
-  margin-bottom: 1rem;
+.about-me-section .container {
+  max-width: 900px;
 }
 
-.section-2 .section-heading-line {
-  width: 80px;
-  height: 4px;
-  background-color: #000;
-  margin: 0 auto 2rem auto;
+.about-me-heading {
+  font-size: 4rem !important;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  color: #111; /* heading in black */
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
 }
 
-.section-2-paragraph {
-  font-size: 1.6rem;
-  color: #000;
-  line-height: 1.6;
-  border-top: 2px solid #ccc;
-  border-bottom: 2px solid #ccc;
-  padding: 2rem;
-  margin: 0 auto;            /* keep it centered */
-  width: 100%;               /* full width inside container */
-  max-width: 800px;          /* but never wider than 800px */
-  box-sizing: border-box;
+.about-me-text {
+  font-size: 1.9rem;
+  line-height: 1.8;
+  color: #111; 
+  position: relative;
+  display: inline-block; 
+  max-width: 100%;
+  opacity: 0;
+  animation: fadeInUp 1s 0.5s forwards;
+}
+
+.quote-icon {
+  font-size: 2rem;
+  color: #000000; 
+  vertical-align: middle;
+}
+
+.about-me-text .quote-icon:first-child {
+  margin-right: 0.5rem;
+}
+
+.about-me-text .quote-icon:last-child {
+  margin-left: 0.5rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+body, html {
+  overflow-x: hidden;
+}
+
+.about-me-text {
+  display: inline; 
+  word-wrap: break-word;
 }
 
 /* =====================
-   Tablet (769px–1024px)
-===================== */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .section-2 {
-    padding: 4rem 2rem;
-  }
-  .section-2-paragraph {
-    max-width: 90%;   /* scale nicely and stay centered */
-    width: 90%;
-  }
-}
-
-/* =====================
-   Laptop (1025px–1280px)
-===================== */
-@media (min-width: 1025px) and (max-width: 1280px) {
-  .section-2-paragraph {
-    max-width: 80%;
-    width: 80%;
-    margin: 0 auto;   /* force center */
-  }
-}
-
-/* =====================
-   Mobile (≤768px)
+   Responsive
 ===================== */
 @media (max-width: 768px) {
-  .section-2 {
-    padding: 3rem 1.5rem;
-    min-height: auto;
+  .about-me-heading {
+    font-size: 2.6rem !important;
   }
 
-  .section-2 .section-heading {
-    font-size: 2.5rem;
+  .about-me-text {
+    font-size: 1.9rem;
   }
 
-  .section-2-paragraph {
-    font-size: 1.8rem;
-    width: 95%;       /* almost full width */
-    max-width: 95%;
-  }
-
-  .section-2 .fa-quote-left,
-  .section-2 .fa-quote-right {
-    font-size: 2rem;
+  .quote-icon {
+    font-size: 1.6rem;
   }
 }
 
