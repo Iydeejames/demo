@@ -38,7 +38,7 @@ html {
 
   /* Layout helpers */
   --container-pad-x: 10rem;
-  --navbar-height: 10rem;
+  --navbar-height: 8.7rem;
 }
 
 /* Safe viewport height variables for mobile UI chrome */
@@ -228,14 +228,14 @@ html {
 .main-name {
   font-size: 4rem;
   font-weight: 700;
-  margin: 1rem 0;
+  margin-bottom: -2rem !important;
   color: #fff;
   opacity: 0;
   animation: fadeInUp 1s 1s forwards;
 }
 
 .highlight-name {
-  background: linear-gradient(45deg, #c6a169, #ffcc00, #c6a169);
+  background: linear-gradient(45deg, #c6a169, #c6a169);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -260,9 +260,9 @@ html {
 }
 
 .heading-1 { color: #c6a169; animation-delay: 0s; }
-.heading-2 { color: #ffcc00; animation-delay: 3s; }
+.heading-2 { color: #55f75d; animation-delay: 3s; }
 .heading-3 { color: #00d4ff; animation-delay: 6s; }
-.heading-4 { color: #ff44aa; animation-delay: 9s; }
+.heading-4 { color: #f561d5; animation-delay: 9s; }
 
 .about-line {
   font-size: 2rem;
@@ -286,7 +286,7 @@ html {
   color: #fff;
   font-size: 1.8rem;
   text-transform: uppercase;
-  border-radius: 3rem;
+  border-radius: 1.4rem;
   border: none;
   box-shadow: 0.5rem 1rem 2rem rgba(0,0,0,0.4);
   cursor: pointer;
@@ -325,7 +325,7 @@ html {
 @media (max-width: 768px) {
   .banner { top: 20%; left: 5%; max-width: 90%; }
   .intro-text { font-size: 2.2rem; }
-  .main-name { font-size: 3.4rem; }
+  .main-name { font-size: 3.4rem; margin-bottom: -1rem !important;}
   .banner-heading { height: 10rem; margin-bottom: 8rem !important; }
   .heading { font-size: 8rem !important; letter-spacing: 0.2rem;}
   .about-line { font-size: 1.9rem; margin-top: -7rem;}
