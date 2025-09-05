@@ -38,7 +38,7 @@ html {
 
   /* Layout helpers */
   --container-pad-x: 10rem;
-  --navbar-height: 8rem;
+  --navbar-height: 10rem;
 }
 
 /* Safe viewport height variables for mobile UI chrome */
@@ -326,7 +326,7 @@ html {
   .banner { top: 20%; left: 5%; max-width: 90%; }
   .intro-text { font-size: 2.2rem; }
   .main-name { font-size: 3.4rem; }
-  .banner-heading { height: 10rem; margin-bottom: 6rem !important; }
+  .banner-heading { height: 10rem; margin-bottom: 8rem !important; }
   .heading { font-size: 8rem !important; letter-spacing: 0.2rem;}
   .about-line { font-size: 1.9rem; margin-top: -7rem;}
   .banner-btn { width: 22rem; font-size: 1.8rem; }
