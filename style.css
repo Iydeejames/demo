@@ -692,7 +692,7 @@ body, html {
 .btn-free     { background-color: #0da5d3; }
 .btn-basic    { background-color: var(--accent-1); }
 .btn-standard { background-color: var(--accent-3); }
-.btn-premium  { background-color: 25324B; }
+.btn-premium  { background-color: #25324B; }
 
 .btn-free:hover,
 .btn-basic:hover,
