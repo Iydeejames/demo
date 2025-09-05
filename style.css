@@ -366,7 +366,7 @@ html {
 
 #milestone .counter {
   margin-top: 2rem;
-  font-size: 4.2rem; /* increased font size */
+  font-size: 4.2rem; */
   font-weight: 900;
   color: #ffffff;
   transition: all 0.3s ease;
@@ -396,7 +396,7 @@ html {
     padding: 4rem 1rem;
   }
   #milestone .counter {
-    font-size: 3.6rem;
+    font-size: 3.9rem;
   }
   #milestone p {
     font-size: 1.7rem;
@@ -546,10 +546,10 @@ html {
 .service-link {
   display: inline-block;
   padding: 0.8rem 1.6rem;
-  border-radius: 2rem;
-  background: linear-gradient(135deg, #c6a169, #e7ba77);
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, #d4a661, #e2ae5f);
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   text-decoration: none;
   transition: background 0.3s ease;
 }
@@ -1043,7 +1043,7 @@ body.modal-open {
 
 .footer-nav a:hover { color: #ffcc00; }
 
-.copyright { font-size: 2rem; color: #ffffff; }
+.copyright { font-size: 1.4rem; color: #ffffff; }
 
 /* -----------------------------
    8) Accessibility & Motion Prefs
