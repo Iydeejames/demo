@@ -260,9 +260,9 @@ html {
 }
 
 .heading-1 { color: #c6a169; animation-delay: 0s; }
-.heading-2 { color: #55f75d; animation-delay: 3s; }
-.heading-3 { color: #00d4ff; animation-delay: 6s; }
-.heading-4 { color: #f561d5; animation-delay: 9s; }
+.heading-2 { color: #c6a169; animation-delay: 3s; }
+.heading-3 { color: #c6a169; animation-delay: 6s; }
+.heading-4 { color: #c6a169; animation-delay: 9s; }
 
 .about-line {
   font-size: 2rem;
