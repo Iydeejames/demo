@@ -656,7 +656,7 @@ body, html {
 .heading-free     { background: linear-gradient(to right, #0da5d3, #0da5d3); border-radius: 1.8rem 1.8rem 0 0; }
 .heading-basic    { background: linear-gradient(to right, #c6a169, #c6a169); border-radius: 1.8rem 1.8rem 0 0; }
 .heading-standard { background: linear-gradient(to right, #e23b3b, #e23b3b); border-radius: 1.8rem 1.8rem 0 0; }
-.heading-premium  { background: linear-gradient(to right, #3be286, #3be286); border-radius: 1.8rem 1.8rem 0 0; }
+.heading-premium  { background: linear-gradient(to right, #25324B, #25324B); border-radius: 1.8rem 1.8rem 0 0; }
 
 .pricing-card-price {
   font-family: Arial, Helvetica, sans-serif;
@@ -692,7 +692,7 @@ body, html {
 .btn-free     { background-color: #0da5d3; }
 .btn-basic    { background-color: var(--accent-1); }
 .btn-standard { background-color: var(--accent-3); }
-.btn-premium  { background-color: var(--accent-4); }
+.btn-premium  { background-color: #25324B; }
 
 .btn-free:hover,
 .btn-basic:hover,
@@ -720,7 +720,7 @@ body, html {
 .back-free     { background: linear-gradient(to right, #087285, #0da5d3); }
 .back-basic    { background: linear-gradient(to right, #946809, #bdba0e); }
 .back-standard { background: linear-gradient(to right, #a10c14, #e23b3b); }
-.back-premium  { background: linear-gradient(to right, #0b7e48, #3be286); }
+.back-premium  { background: linear-gradient(to right, #25324B, #25324B; }
 
 .pricing-card-back a { font-size: 2.5rem; color: #fff; }
 
