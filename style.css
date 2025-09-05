@@ -692,7 +692,7 @@ body, html {
 .btn-free     { background-color: #0da5d3; }
 .btn-basic    { background-color: var(--accent-1); }
 .btn-standard { background-color: var(--accent-3); }
-.btn-premium  { background-color: #25324B; }
+.btn-premium  { background-color: 25324B; }
 
 .btn-free:hover,
 .btn-basic:hover,
@@ -720,7 +720,7 @@ body, html {
 .back-free     { background: linear-gradient(to right, #087285, #0da5d3); }
 .back-basic    { background: linear-gradient(to right, #946809, #bdba0e); }
 .back-standard { background: linear-gradient(to right, #a10c14, #e23b3b); }
-.back-premium  { background: linear-gradient(to right, #25324B, #25324B; }
+.back-premium  { background: linear-gradient(to right, #25324B, #25324B); }
 
 .pricing-card-back a { font-size: 2.5rem; color: #fff; }
 
