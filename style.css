@@ -192,24 +192,14 @@ html {
 }
 
 
-/* -----------------------------
-   Section 1
-   ----------------------------- */
 .section-1 {
   width: 100%;
-  height: 100vh; /* use vh, not dvh, to avoid expansion on scroll */
-  background: url(images/bg_banner1.jpg) no-repeat center center / cover;
+  height: 100vh;
+  background: url('images/bg_banner1.jpg') center 15%/cover no-repeat;
   position: relative;
-  background-attachment: fixed; /* prevent "stretch" */
-  background-size: cover;
+  overflow: hidden;
 }
 
-
-@supports not (height: 100dvh) {
-  .section-1 { min-height: calc(var(--vh) * 100); }
-}
-
-/* Dark overlay */
 .section-1::before {
   content: "";
   position: absolute;
@@ -218,75 +208,77 @@ html {
   z-index: 1;
 }
 
-/* Banner Content */
 .banner {
   position: absolute;
   top: 25%;
-  left: 8%; /* less cramped */
-  text-align: left;
-  max-width: 850px; /* wider text container */
+  left: 8%;
+  max-width: 850px;
   z-index: 2;
+  text-align: left;
 }
 
-/* Intro text */
 .intro-text {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: #f0f0f0;
   margin-bottom: 1rem;
-  margin-top: 8rem;
-  letter-spacing: 0.05em;
   opacity: 0;
-  animation: fadeAnimation 1s 0.5s forwards;
+  animation: fadeInUp 1s 0.5s forwards;
 }
 
-/* Name */
 .main-name {
-  font-size: 3.8rem;
-  font-weight: 600;
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 1rem 0;
   color: #fff;
-  margin-top: 2rem;
-  margin-bottom: -1rem;
-  letter-spacing: 0.08em; /* extra spacing */
   opacity: 0;
-  animation: fadeAnimation 1s 1s forwards;
+  animation: fadeInUp 1s 1s forwards;
 }
 
-/* Animated headings */
+.highlight-name {
+  background: linear-gradient(45deg, #c6a169, #ffcc00, #c6a169);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .banner-heading {
-  margin-bottom: 2rem;
-  height: 14rem;
-  perspective: 50rem;
   position: relative;
+  height: 14rem;
+  margin-bottom: 2rem;
 }
 
-
-
-.banner-heading span {
+.heading {
   font-family: 'Oswald', sans-serif;
-  font-size: 2.8rem;
-  font-weight: 400;
+  font-size: 3rem;
+  font-weight: 700;
   text-transform: uppercase;
-  color: #fff;
-  text-shadow: 0.2rem 0.2rem 0.5rem rgba(0,0,0,0.6);
   position: absolute;
   left: 0;
-  transform: translateZ(8rem);
   opacity: 0;
-  letter-spacing: 1rem; /* more spacing */
-  will-change: transform, opacity, letter-spacing;
+  transform: translateY(20px);
+  letter-spacing: 0.3rem;
+  animation: slideHeadings 12s infinite;
 }
 
-/* About line */
+.heading-1 { color: #c6a169; animation-delay: 0s; }
+.heading-2 { color: #ffcc00; animation-delay: 3s; }
+.heading-3 { color: #00d4ff; animation-delay: 6s; }
+.heading-4 { color: #ff44aa; animation-delay: 9s; }
+
 .about-line {
   font-size: 2rem;
-  color: #e0e0e0;
+  line-height: 1.5;
+  color: #fff;
   margin-bottom: 3rem;
-  line-height: 1.4;
   opacity: 0;
-  animation: fadeAnimation 1s 1.5s forwards;
+  animation: fadeInUp 1s 1.5s forwards;
 }
 
-/* Button */
+.highlight-line {
+  color: #c6a169;
+  font-weight: 600;
+  font-size: 2.4rem;
+}
+
 .banner-btn {
   width: 20rem;
   min-height: 5rem;
@@ -299,7 +291,7 @@ html {
   box-shadow: 0.5rem 1rem 2rem rgba(0,0,0,0.4);
   cursor: pointer;
   opacity: 0;
-  animation: fadeAnimation 1s 2s forwards;
+  animation: fadeInUp 1s 2s forwards;
   position: relative;
   overflow: hidden;
 }
@@ -318,82 +310,30 @@ html {
 .banner-btn:hover::before { left: 100%; }
 
 /* Animations */
-@keyframes animateHeading {
-  0%   { transform: translateZ(8rem); opacity: 0; letter-spacing: 1.2rem; }
-  3%   { transform: translateZ(0);   opacity: 1; letter-spacing: 0.5rem; }
-  25%  { transform: translateZ(0);   opacity: 1; letter-spacing: 0.5rem; }
-  28%  { transform: translateZ(8rem); opacity: 0; letter-spacing: 1.2rem; }
-  100% { transform: translateZ(8rem); opacity: 0; letter-spacing: 1.2rem; }
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px);}
+  100% { opacity: 1; transform: translateY(0);}
 }
 
-.heading-1 { animation: animateHeading 12s 2s infinite; }
-.heading-2 { animation: animateHeading 12s 5s infinite; }
-.heading-3 { animation: animateHeading 12s 8s infinite; }
-.heading-4 { animation: animateHeading 12s 11s infinite; }
-
-@keyframes fadeAnimation {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes slideHeadings {
+  0%, 20% { opacity: 0; transform: translateY(20px);}
+  25%, 45% { opacity: 1; transform: translateY(0);}
+  50%, 100% { opacity: 0; transform: translateY(-20px);}
 }
-
-/* =====================
-   Desktop adjustments
-===================== */
-@media (min-width: 992px) {
-  .section-1 { background-position: center 15%; }
-  .main-name { font-size: 4.5rem; }
-  .banner-heading span { font-size: 3.2rem; }
-  .about-line { font-size: 2.2rem; }
-}
-
-/* =====================
-   Mobile-specific styles
-===================== */
+ 
+/* Responsive */
 @media (max-width: 768px) {
-  .banner {
-    top: 20%;
-    left: 5%;
-    max-width: 90%;
-  }
-
-  .section-1 {
-    height: 95vh;              /* fixed viewport height */
-    background-attachment: scroll; /* prevent buggy zoom effect */
-    background-position: center top;
-    background-size: cover;
-    overflow: hidden; /* stop weird expansion */
-  }
-
-  .intro-text {
-    font-size: 2.4rem;
-    margin-top: 6rem;
-  }
-
-  .main-name {
-    font-size: 3.4rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .banner-heading {
-    height: 8rem;
-  }
-
-  .banner-heading span {
-    font-size: 1.8rem;
-    letter-spacing: 0.6rem;
-  }
-
-  .about-line {
-    font-size: 2.5rem;
-    margin-top: -6rem;
-  }
-
-  .banner-btn {
-    width: 14rem;
-    min-height: 4rem;
-    font-size: 2rem;
-  }
+  .banner { top: 20%; left: 5%; max-width: 90%; }
+  .intro-text { font-size: 2.2rem; }
+  .main-name { font-size: 3.4rem; }
+  .banner-heading { height: 10rem; margin-bottom: 6rem !important; }
+  .heading { font-size: 8rem !important; letter-spacing: 0.2rem;}
+  .about-line { font-size: 1.9rem; margin-top: -7rem;}
+  .banner-btn { width: 22rem; font-size: 1.8rem; }
 }
+
+
+
 
 /* -----------------------------
    MILESTONE SECTION
@@ -425,8 +365,9 @@ html {
 }
 
 #milestone .counter {
-  font-size: 4rem; /* increased font size */
-  font-weight: 800;
+  margin-top: 2rem;
+  font-size: 4.2rem; /* increased font size */
+  font-weight: 900;
   color: #ffffff;
   transition: all 0.3s ease;
 }
@@ -435,6 +376,7 @@ html {
   font-size: 1.5rem; /* increased font size */
   color: #ffffff;
   margin-top: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 
@@ -442,7 +384,7 @@ html {
 /* Responsive adjustments */
 @media (max-width: 992px) {
   #milestone .counter {
-    font-size: 3.5rem;
+    font-size: 3.9rem;
   }
   #milestone p {
     font-size: 2rem;
@@ -454,7 +396,7 @@ html {
     padding: 4rem 1rem;
   }
   #milestone .counter {
-    font-size: 2.7rem;
+    font-size: 3.6rem;
   }
   #milestone p {
     font-size: 1.7rem;
