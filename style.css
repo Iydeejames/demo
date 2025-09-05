@@ -398,7 +398,7 @@ html {
   }
   #milestone p {
     font-size: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
   }
 }
 
@@ -415,6 +415,7 @@ html {
   }
   #milestone p {
     font-size: 1.7rem;
+    margin-bottom: 5rem;
   }
 }
 
