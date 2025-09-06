@@ -939,6 +939,72 @@ body.modal-open {
   }
 }
 
+/* BOOK A SESSION STYLES */
+.book-session {
+  background: #ffffff; /* white background */
+  color: #333;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.book-session-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.book-session-content h2 {
+  font-size: 3rem;
+  margin-bottom: 1.2rem;
+  color: #111;
+}
+
+.book-session-content p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.book-session-content .highlight-text {
+  margin-top: 1.2rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #fc4343;}
+
+.book-btn {
+  display: inline-block;
+  margin-top: 0rem;
+  padding: 0.9rem 2.2rem;
+  background: var(--bg-dark);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border-radius: 7px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+  background: #164475;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .book-session-content h2 {
+    font-size: 2.9rem;
+  }
+  .book-session-content p {
+    font-size: 1.6rem;
+  }
+  .book-btn {
+    font-size: 1.6rem;
+    padding: 1.3rem 3rem;
+  }
+}
+
+
 /* -----------------------------
    6) Section 4 – Contact
    ----------------------------- */
