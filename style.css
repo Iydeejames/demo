@@ -606,8 +606,8 @@ body, html {
     font-size: 3.5rem;
     font-weight: 600;
     color: var(--bg-darker);
-    margin-bottom: 2rem !important;
-    margin-top: 4rem;
+    margin-bottom: -3rem !important;
+    margin-top: 6rem;
   } 
 
   
@@ -625,7 +625,7 @@ body, html {
   width: 28rem !important;
   height: 45rem !important;
   background-color: #ffffff;
-  border-radius: 1.8rem;
+  border-radius: 1rem;
   box-shadow: 0.2rem 0.2rem 0.5rem ;
   position: relative; /* to place .pricing-card-back absolute */
   overflow: hidden;  /* keep flipping content bound */
@@ -653,10 +653,10 @@ body, html {
   padding-left: 2rem;
 }
 
-.heading-free     { background: linear-gradient(to right, #0da5d3, #0da5d3); border-radius: 1.8rem 1.8rem 0 0; }
-.heading-basic    { background: linear-gradient(to right, #c6a169, #c6a169); border-radius: 1.8rem 1.8rem 0 0; }
-.heading-standard { background: linear-gradient(to right, #e23b3b, #e23b3b); border-radius: 1.8rem 1.8rem 0 0; }
-.heading-premium  { background: linear-gradient(to right, #25324B, #25324B); border-radius: 1.8rem 1.8rem 0 0; }
+.heading-free     { background: linear-gradient(to right, #0da5d3, #0da5d3); border-radius: 1rem 1rem 0 0; }
+.heading-basic    { background: linear-gradient(to right, #c6a169, #c6a169); border-radius: 1rem 1rem 0 0; }
+.heading-standard { background: linear-gradient(to right, #e23b3b, #e23b3b); border-radius: 1rem 1rem 0 0; }
+.heading-premium  { background: linear-gradient(to right, #25324B, #25324B); border-radius: 1rem 1rem 0 0; }
 
 .pricing-card-price {
   font-family: Arial, Helvetica, sans-serif;
@@ -679,7 +679,7 @@ body, html {
   width: 18rem;
   height: 5rem;
   margin-bottom: 3rem;
-  border-radius: 5rem;
+  border-radius: 1rem;
   border: none;
   font-size: 1.6rem;
   text-transform: uppercase;
@@ -805,7 +805,7 @@ body.modal-open {
   }
 
   .pricing-card {
-    width: 60% !important;
+    width: 63% !important;
     margin: 0 auto; 
   }
 
